@@ -1,0 +1,14 @@
+.card-img-top{
+  object-fit: cover;
+  height: 450px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.lista-notas li{
+  list-style:none;
+}
+.lista-notas {
+  overflow:hidden;
+  padding:3em;
+  padding-top: 1em;
+}
