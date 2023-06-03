@@ -19,7 +19,7 @@
                         <div class="mb-md-5 mt-md-4 pb-5">
 
                             <h2 class="fw-bold mb-2 " >InstaUAZ</h2>
-                            <p class="text-white-50 mb-5">Introduce tu nombre de usuario y contraseña!</p>
+                            <p class="text-white-50 mb-5">Introduce tu nombre de usuario y contraseña</p>
 
                             <div class="form-outline form-white mb-4">
                                 <input type="email" id="txtNombreUsuario" class="form-control form-control-lg" />
@@ -32,7 +32,7 @@
                             </div>
 
 
-                            <button onclick="iniciarSesion()" class="btn btn-outline-light btn-lg px-5" type="submit" style="background-color:#C29118">Login</button>
+                            <button onclick="iniciarSesion()" class="btn btn-outline-light btn-lg px-5" type="submit" style="background-color:#C29118">Iniciar sesión</button>
 
 
                         </div>
@@ -44,6 +44,60 @@
         </div>
     </div>
 </section>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ERROR</h5>
+            </div>
+            <div class="modal-body">
+                <p>Por favor, escribe el nombre de usuario.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cerrarModal" onclick="disposeModal(1)" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ERROR</h5>
+            </div>
+            <div class="modal-body">
+                <p>Por favor, escribe la contraseña.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cerrarModal2" onclick="disposeModal(2)" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal3">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ERROR</h5>
+            </div>
+            <div class="modal-body">
+                <p>Los datos son incorrectos. Por favor, intenta nuevamente.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cerrarModal3" onclick="disposeModal(3)" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function disposeModal(num) {
+  $('#modal' + num).modal('hide');
+}
+</script>
 <script src="login.js"></script>
 </body>
 </html>

@@ -13,7 +13,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
-<body>
+<body class="body">
+
 <nav class="navbar navbar-expand-lg " style="background-color: #1A365C;" >
     <div class="container-fluid" style="background-color: #1A365C;">
         <a class="navbar-brand" href="inicio.html" style="color: #FFFFFF; font-size: 25px; font-weight: bold">InstaUAZ</a>
@@ -23,21 +24,86 @@
         <div class="collapse navbar-collapse" id="navbarNav" style="background-color: #1A365C">
             <ul class="navbar-nav">
                 <li class="nav-item" >
-                    <a onclick="clearLocalStorage()" class="nav-link active" aria-current="page" href="index.html" style="color: #FFFFFF " >Cerrar Sesion</a>
+                    <a onclick="clearLocalStorage()" class="nav-link active" aria-current="page" href="index.html" style="color: #FFFFFF " >Cerrar sesión</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
+<div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4" id="main">
 
 </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" id="modal1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar comentario</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-outline">
+                    <input type="text" id="typeText" class="form-control" placeholder="Escribe tu comentario aquí..."/>
+                    <label class="form-label" for="typeText"></label>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btnGuardar" onclick="" type="button" class="btn btn-primary">Guardar</button>
+                <button onclick="disposeModal(1)" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar comentario</h5>
+            </div>
+            <div class="modal-body">
+                <p>¡El comentario se ha editado correctamente!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cerrarModal" onclick="disposeModal(2)" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal3">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Borrar Publicacion</h5>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro que deseas borrar la publicación? </p>
+            </div>
+            <div class="modal-footer">
+                <button id="borrarPubli" type="button" class="btn btn-primary" style="background-color: #D90707; border-color: #B50606;">Eliminar</button>
+                <button onclick="disposeModal(3)" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
+function disposeModal(num) {
+  $('#modal' + num).modal('hide');
+}
+</script>
+<script>
 function clearLocalStorage() {
-    console.log("Clearing localStorage...");
-    localStorage.clear();
+    console.log("Clearing localStorage...")
+    localStorage.clear()
 }
 </script>
 <script src="imagenes.js"></script>

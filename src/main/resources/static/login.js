@@ -55,18 +55,18 @@ async function iniciarSesion() {
             window.location.href = 'inicio.html';
         } else {
             // Si la respuesta es fallida, mostrar un mensaje de error
-            alert('Los datos son incorrectos. Por favor, intenta nuevamente.');
+              $("#modal3").modal('show');
         }
     } else {
         // Validar los campos de inicio de sesión
         if (datos.nom_usuario === '') {
-            alert('Por favor, escribe el nombre de usuario.');
-            txtNombreUsu();
-        }
+              $("#modal1").modal('show');
+
+        }else{
         if (datos.con_usuario === '') {
-            alert('Por favor, escribe la contraseña.');
-            txtPassword();
-        }
+              $("#modal2").modal('show');
+
+        }}
         return;
     }
 }
